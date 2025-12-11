@@ -1,0 +1,191 @@
+/* ---------- Fundo com glitter animado ---------- */
+body {
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #ffd9e8;
+    background-image: radial-gradient(circle, #ffe4f0 1px, transparent 1px);
+    background-size: 20px 20px;
+    animation: glitter 3s linear infinite;
+    overflow-x: hidden;
+}
+
+/* Animação do glitter */
+@keyframes glitter {
+    0% { background-position: 0 0; }
+    100% { background-position: 20px 20px; }
+}
+
+.container {
+    max-width: 760px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* ---------- Títulos ---------- */
+.titulo {
+    font-size: 2.5em;
+    color: #ff3e70;
+    text-shadow: 1px 1px 3px #ffffff;
+}
+
+.sub {
+    font-size: 1.2em;
+    color: #ff6f91;
+    margin-bottom: 30px;
+}
+
+/* ---------- Cards ---------- */
+.card {
+    background: #ffffffcc;
+    border: 2px solid #ffb6c1; /* moldura fofinha rosinha */
+    border-radius: 20px;
+    padding: 15px;
+    margin: 20px 0;
+    box-shadow: 0 4px 10px #00000020;
+    animation: aparecer 1s ease;
+}
+
+.card img {
+    width: 40%; 
+    height: 40%;
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: contain;
+    border-radius: 15px;
+    background: #ffffff;
+    padding: 5px;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+.card p {
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* ---------- Botão ---------- */
+.btn {
+    background: #ff6f91;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ff3e70;
+}
+
+/* ---------- Mensagem surpresa ---------- */
+.hidden {
+    opacity: 0;
+    display: none;
+    margin-top: 20px;
+    font-size: 1.3em;
+    color: #ff3e70;
+    transition: 1s ease;
+}
+
+.show {
+    opacity: 1;
+    display: block;
+}
+
+/* ---------- Animação cards ---------- */
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Carrossel ---------- */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 30px auto;
+    overflow: hidden;
+    border-radius: 15px;
+    background: #ffffffcc;
+    padding: 10px;
+    border: 2px solid #ffb6c1; /* moldura rosinha */
+    box-shadow: 0 4px 10px #00000040;
+}
+
+.carousel-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide img {
+    width: 40%;
+    height: 40%;
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: contain;
+    border-radius: 10px;
+    background: #ffffff;
+    padding: 5px;
+    display: block;
+    margin: 0 auto;
+}
+
+.caption {
+    text-align: center;
+    font-size: 1.1em;
+    color: #ff3e70;
+    margin-top: 8px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px #ffffff;
+}
+
+/* Botões carrossel */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: #ff6f91;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.prev:hover, .next:hover {
+    background: #ff3e70;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* ---------- Corações ---------- */
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    color: #ff5e8e;
+    font-size: 20px;
+    animation: fall linear infinite;
+    opacity: 0.9;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
